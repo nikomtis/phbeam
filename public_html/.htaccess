@@ -1,0 +1,18 @@
+AddDefaultCharset utf-8
+
+ErrorDocument 404 /
+
+RewriteEngine On
+RewriteBase /
+
+# Remove www
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# Pass url to engine
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule . index.php [L]
