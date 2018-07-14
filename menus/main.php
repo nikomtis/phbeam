@@ -2,8 +2,8 @@
 
 return [
     '' => [
-        'name' => 'Home',
         'file' => 'home',
+        'name' => 'Home',
         'layout' => '',
         'body_class' => '',
     ],
