@@ -33,7 +33,7 @@ foreach ($url_params as $param => $value) {
 
 if (array_key_exists($path, $menu) && file_exists("{$base_dir}/content/{$menu[$path]['file']}.php") && empty($blocked_params)) {
     $page = $menu[$path]['file'];
-    $body_class = $menu[$path]['body_class'];
+    $body_class = $menu[$path]['body_class'] ?: $config['default_body_class'];
     $layout = $menu[$path]['layout'] ?: $config['default_layout'];
 } else {
     header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
