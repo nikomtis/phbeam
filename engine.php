@@ -31,18 +31,15 @@ foreach ($url_params as $param => $value) {
     }
 }
 
-$default_layout = $config['default_layout'];
-$error_page_layout = $config['error_page_layout'];
-
 if (array_key_exists($path, $menu) && file_exists("{$base_dir}/content/{$menu[$path]['file']}.php") && empty($blocked_params)) {
     $page = $menu[$path]['file'];
     $body_class = $menu[$path]['body_class'];
-    $layout = $menu[$path]['layout'] ?: $default_layout;
+    $layout = $menu[$path]['layout'] ?: $config['default_layout'];
 } else {
     header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
     $page = '404';
     $body_class = 'error';
-    $layout = $error_page_layout;
+    $layout = $config['error_page_layout'];
 }
 
 ob_start();
@@ -193,7 +190,7 @@ function phb_insert_position($position)
                 $module_name = $module_params;
                 $module_params = null;
             }
-    
+
             echo "<div class=\"{$GLOBALS['config']['modules_class_prefix']}_$module_name\">";
             phb_insert_module($module_name, $module_params);
             echo '</div>';
