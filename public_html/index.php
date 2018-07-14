@@ -1,3 +1,3 @@
 <?php
 
-(include_once '../engine.php') or die('Site is under maintenance. Please try again later.');
+(@include_once '../engine.php') or die('Error loading site');

@@ -1,1 +1,1 @@
-<?php echo $article; ?>
+<?php echo $GLOBALS['article']; ?>
