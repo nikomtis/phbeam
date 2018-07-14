@@ -14,7 +14,7 @@ $config = phb_get_data_from_php('config');
 $menu = [];
 
 foreach ($config['menus'] as $menu_name) {
-    ${"menu_$menu_name"} = phb_get_data_from_php('menus/_menu_' . $menu_name);
+    ${"menu_$menu_name"} = phb_get_data_from_php('menus/' . $menu_name);
     $menu += ${"menu_$menu_name"};
 }
 
