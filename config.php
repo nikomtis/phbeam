@@ -10,5 +10,5 @@ return [
     'menus' => [
         'main',
     ],
-    'modules_class_prefix' => 'module',
+    'modules_classes_prefix' => 'module',
 ];

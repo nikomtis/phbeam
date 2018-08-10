@@ -2,7 +2,7 @@
 
 /**
  * PHBeam - Simple and fast PHP micro-framework
- * Version 0.2.0
+ * Version 0.3.0
  * Created by Nikita Privalov
  * GitHub repo: https://github.com/nikomtis/phbeam
  */
@@ -182,8 +182,6 @@ function phb_insert_position($position)
 {
     $modules = phb_get_position_modules($position);
 
-    phb_preview_array($modules);
-
     if ($modules) {
         foreach ($modules[$position] as $module_name => $module_params) {
             if (is_int($module_name)) {
@@ -191,7 +189,7 @@ function phb_insert_position($position)
                 $module_params = null;
             }
 
-            echo "<div class=\"{$GLOBALS['config']['modules_class_prefix']}_$module_name\">";
+            echo "<div class=\"{$GLOBALS['config']['modules_classes_prefix']}_$module_name\">";
             phb_insert_module($module_name, $module_params);
             echo '</div>';
         }
@@ -201,13 +199,13 @@ function phb_insert_position($position)
 /**
  * Add timestamp to the file path
  *
- * @param string $filename Path to file in "public_html/" directory in format "foo/bar.txt".
+ * @param string $filename Path to file in "public/" directory in format "foo/bar.txt".
  *
  * @return string|false Path with added timestamp in format "foo/bar.txt?v=1531411841" or FALSE if file not found.
  */
 function phb_add_timestamp($filename)
 {
-    $file = "{$GLOBALS['base_dir']}/public_html/$filename";
+    $file = "{$GLOBALS['base_dir']}/public/$filename";
 
     if (!file_exists($file)) {
         return false;
@@ -221,7 +219,7 @@ function phb_add_timestamp($filename)
 /**
  * Insert CSS file link with it's version
  *
- * @param string $filename Name of the CSS file in "public_html/css/" directory without extension.
+ * @param string $filename Name of the CSS file in "public/css/" directory without extension.
  *
  * @return void
  */
@@ -237,7 +235,7 @@ function phb_insert_css($filename)
 /**
  * Insert JS file link with it's version
  *
- * @param string $filename Name of the JS file in "public_html/js/" directory without extension.
+ * @param string $filename Name of the JS file in "public/js/" directory without extension.
  *
  * @return void
  */
