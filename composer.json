@@ -1,0 +1,12 @@
+{
+  "name": "nikomtis/phbeam",
+  "description": "Simple and fast PHP micro-framework",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nikita Privalov",
+      "email": "contact@nikomtis.pro"
+    }
+  ]
+}
