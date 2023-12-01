@@ -2,7 +2,7 @@
 
 /**
  * PHBeam - Simple and fast PHP micro-framework
- * Version 0.3.0
+ * Version 0.3.1
  * Created by Nikita Privalov
  * GitHub repo: https://github.com/nikomtis/phbeam
  */
