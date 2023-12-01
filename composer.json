@@ -8,5 +8,9 @@
       "name": "Nikita Privalov",
       "email": "contact@nikomtis.pro"
     }
-  ]
+  ],
+  "require": {
+    "php": ">=5.4",
+    "ext-json": "*"
+  }
 }
