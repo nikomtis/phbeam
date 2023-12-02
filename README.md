@@ -6,19 +6,37 @@ It is good for building sites with dozens of pages and even with small product c
 
 ## Requirements
 
-You need Apache web server with PHP >= 5.4. No database required.
+You need a web server with PHP >= 5.4. No database required.
 
 ## Installation
 
-You can clone this repository:
+PHBeam can be installed in one of the following ways:
 
-```
-git clone https://github.com/nikomtis/phbeam.git myproject
-```
+### 1. Using Composer (Recommended):
 
-Or download zip with last version from https://github.com/nikomtis/phbeam/releases
+- Ensure Composer is installed.
+- Run this command in the directory where you want to create your new PHBeam project:
+    ```bash
+    composer create-project nikomtis/phbeam myproject
+    ```
+- This method will automatically download PHBeam and install all necessary dependencies.
 
-Configure your web server's `DocumentRoot` to use `public/index.php` file as entry point.
+### 2. Cloning the Git Repository:
+
+- Clone the repository using:
+    ```bash
+    git clone https://github.com/nikomtis/phbeam.git myproject
+    ```
+- After cloning, navigate to the project directory (`cd myproject`) and run `composer install` to install dependencies.
+
+### 3. Manual Installation:
+
+- Download the latest version as a zip file from PHBeam Releases.
+- Extract it to your desired location and manually install dependencies if necessary.
+
+### Post-Installation Configuration:
+
+For all installation methods, configure your web server to use `public/index.php` as the entry point. This typically involves setting the `DocumentRoot` or equivalent directive in your web server's configuration.
 
 ## Setting up your project
 
@@ -379,4 +397,6 @@ Instead of `phb_get_data_from_php()` function you will need to use `phb_get_data
 
 ## License
 
-MIT Licensed. Copyright (c) Nikita Privalov 2018.
+MIT Licensed.
+
+Copyright © 2018-2023 Nikita Privalov. All rights reserved.
